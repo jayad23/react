@@ -7,48 +7,36 @@ interface inforationProps {
 };
 function App() {
   const information: Array<inforationProps> = [
-    { id: 1, label: "primera_sesion", topics: ["Instalación de MUi", "Componentes Básicos", "Paso de props a componentes", "Atributos bñasicos"]},
-    //{ id: 2, label: "segunda_sesion", topics: ["Etiquetas contenedoras y estilos default", "Texfield", "Grid System", "Combianos eso creando un Login y una vista Home en la que también vimos:", "Firebase", "React router Layout", "API Calls", "Split coding"]},
+    { id: 1, label: "¿Cómo se instala Material Ui?", topics: ["Instalación de MUi", "Componentes Básicos", "Paso de props a componentes", "Atributos bñasicos"]}
   ]
 
   return (
-    <Box 
-      component="div"
-      sx={{
-        border: "1px solid grey",
-        borderRadius: "10px",
-        position: "absolute",
-        top: "50%",
-        left: "50%",
-        transform: "translate(-50%, -50%)",
-        maxWidth: "700px",
-        width: "content-fit",
-        p: 2
-      }}
-    >
+    <Box component="div" p={2}>
       <Typography variant="h4" component="div" mb={2}>
-        Bienvenidos a React con MUi & TypeScript
+        Branch: primera_sesion
       </Typography>
       <Typography variant="body1" component="p" mb={1}>
-        Para acceder a la información de las sesiones, debes dirigirte a las ramas/(branches):
+        Explicación:
       </Typography>
-      <Box component="section" sx={{ paddingLeft: "20px"}}>
-        <ul>
-          {
-            information.map((info: inforationProps) => (
-              <li key={info.id}>
-                {info.label}
-                <Box component="ul" sx={{ paddingLeft: "20px"}}>
-                  {
-                    info.topics.map((topic: string) => (
-                      <li key={topic}>{topic}</li>
-                    ))
-                  }
-                </Box>
-              </li>
-            ))
-          }
-        </ul>
+      <Box component="ul" sx={{ paddingLeft: "20px"}}>
+        <li>¿Qué es Material Ui?</li>
+          <Box component="ul" sx={{ paddingLeft: "20px"}}>
+            <li> Para toda la información teórica, accede al PPTX que se usó en clase accediendo al link: <a href="https://1drv.ms/p/s!AmkmA2B9HL9O6QgoVIwq5ay90orF?e=RSZLJL" target='_blank'>Aquí</a></li>
+          </Box>
+        {
+          information.map((info: inforationProps) => (
+            <li key={info.id}>
+              {info.label}
+              <Box component="ul" sx={{ paddingLeft: "20px"}}>
+                {
+                  info.topics.map((topic: string) => (
+                    <li key={topic}>{topic}</li>
+                  ))
+                }
+              </Box>
+            </li>
+          ))
+        }
       </Box>
     </Box>
   )
