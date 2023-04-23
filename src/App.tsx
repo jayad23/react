@@ -1,42 +1,41 @@
-import {Box, Typography} from '@mui/material';
 import React, { useState } from 'react'
-interface inforationProps {
-  id: number;
-  label: string;
-  topics: Array<string>;
-};
+import {Box, Button, Divider, Grid, Typography } from '@mui/material';
+import { One } from './components/primera-s-menu/One';
+import { Two } from './components/primera-s-menu/Two';
+import { Third } from './components/primera-s-menu/Third';
+import { Fourth } from './components/primera-s-menu/Fourth';
+import { Fifth } from './components/primera-s-menu/Fifth';
+
 function App() {
-  const information: Array<inforationProps> = [
-    { id: 1, label: "¿Cómo se instala Material Ui?", topics: ["Instalación de MUi", "Componentes Básicos", "Paso de props a componentes", "Atributos bñasicos"]}
-  ]
+  const [selected, setSelected] = useState("");
+  const handleSelected = (label: string) => setSelected(label);
 
   return (
-    <Box component="div" p={2}>
+    <Box component="div" p={2} width="100%" >
       <Typography variant="h4" component="div" mb={2}>
         Branch: primera_sesion
       </Typography>
-      <Typography variant="body1" component="p" mb={1}>
-        Explicación:
-      </Typography>
-      <Box component="ul" sx={{ paddingLeft: "20px"}}>
-        <li>¿Qué es Material Ui?</li>
-          <Box component="ul" sx={{ paddingLeft: "20px"}}>
-            <li> Para toda la información teórica, accede al PPTX que se usó en clase accediendo al link: <a href="https://1drv.ms/p/s!AmkmA2B9HL9O6QgoVIwq5ay90orF?e=RSZLJL" target='_blank'>Aquí</a></li>
-          </Box>
+      <Grid container mb={2} spacing={1} sx={{ justifyContent: { lg: "center" }}}>
         {
-          information.map((info: inforationProps) => (
-            <li key={info.id}>
-              {info.label}
-              <Box component="ul" sx={{ paddingLeft: "20px"}}>
-                {
-                  info.topics.map((topic: string) => (
-                    <li key={topic}>{topic}</li>
-                  ))
-                }
-              </Box>
-            </li>
+          [{ title: "¿Qué es Material Ui?", label: "first"}, { title: "Instalación", label: "second"}, { title: "Simple & Complex components", label: "third"}, { title: "Atributos y props", label: "fourth"}, { title: "Tips básicos de TS", label: "fifth"}].map((menu: { title: string; label: string}) => (
+            <Grid key={menu.label} xs={12} sm={6} md={4} lg={2.3} item>
+              <Button 
+                fullWidth 
+                variant="contained" 
+                size="small"
+                color={selected === menu.label ? "secondary" : "primary" } 
+                sx={{ height: "50px"}}
+                onClick={() => handleSelected(menu.label)}
+                >
+                  {menu.title}
+              </Button>
+            </Grid>
           ))
         }
+      </Grid>
+      <Divider/>
+      <Box>
+        {componentObject[selected as keyof typeof componentObject]}
       </Box>
     </Box>
   )
@@ -45,3 +44,10 @@ function App() {
 export default App;
 
 
+const componentObject = {
+  first: <One/>,
+  second: <Two />,
+  third: <Third/>,
+  fourth: <Fourth />,
+  fifth: <Fifth/>
+}
