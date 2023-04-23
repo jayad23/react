@@ -34,9 +34,11 @@ function App() {
         }
       </Grid>
       <Divider/>
-      <Box>
-        {componentObject[selected as keyof typeof componentObject]}
-      </Box>
+      <Grid container sx={{ overflow: "hidden"}}>
+        <Grid xs={12} item>
+          {componentObject[selected as keyof typeof componentObject]}
+        </Grid>
+      </Grid>
     </Box>
   )
 }

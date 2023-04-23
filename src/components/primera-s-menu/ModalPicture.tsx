@@ -12,13 +12,11 @@ const style = {
   width: { xs: "100%", md: "1000px"},
   height: { xs: "auto", md: "620px"},
   transform: 'translate(-50%, -50%)',
-  bgcolor: 'background.paper',
-  boxShadow: 24,
+  bgcolor: 'none',
   overflow: "scroll",
   '::-webkit-scrollbar': {
     display: "none"
   },
-  p: 1,
   borderRadius: "5px",
 };
 

@@ -3,6 +3,13 @@ import { Generic } from './Generic';
 import fourthPicture from "../../assets/images/4.png";
 import tenthPicture from "../../assets/images/10.png";
 import eleventhPicture from "../../assets/images/11.png";
+import thirteenthPicture from "../../assets/images/13.png";
+import forteenthPicture from "../../assets/images/14.png"
+import picA from "../../assets/images/15_a.png";
+import picB from "../../assets/images/15_b.png";
+import picC from "../../assets/images/15_c.png";
+import picD from "../../assets/images/15_d.png";
+import picE from "../../assets/images/15_e.png";
 
 
 const information = [
@@ -28,18 +35,40 @@ const information = [
     imageUrl: [eleventhPicture]
   },
   { id: 3,
-    label: "Tipando useState",
+    label: "Tipando Eventos y funciones",
     text: `
-      Contenido en construcción.
+      Para este tema, voy a dejarles un Chatsheet en el que se explica a detalle los eventos más comunes en React,
+      onClick, onSubmit, onChange... Elementos que se relacionan con dichos eventos, y cómo trabajar sus tipos cuando dicho eventos
+      se asignan a otros elementos HTML, por ejemplo un evento onClick a un <div></div>. 
+      Para ver la información completa visite el siguiente URL: https://blog.bitsrc.io/react-with-typescript-cheatsheet-9dd891dc5bfe#45d2 
     `,
-    imageUrl: []
+    imageUrl: [thirteenthPicture]
   },
   { id: 4,
     label: "Interfaces",
     text: `
-      Contenido en construcción
+      Durante este taller, las declaraciónes de TS las haremos por medio de interfaces. Una interfaz en TS es una colección.
+      Recordemos que Ts tiene como propósito ayudarnos a tener más control sobre el flujo de datos, y no proveer esos datos.
+      Utilizamos la palabra reservada interface, asignamos el nombre de esa colección, y guardamos sus valores en un objeto sin el signo =
+      En la imagen se comparte un ejemplo:
     `,
-    imageUrl: []
+    imageUrl: [forteenthPicture]
+  },
+  { id: 5,
+    label: "Tipando useState",
+    text: `
+      IMAGEN A: TypeScript es muy inteligente en inferir los tipos cuando una variable se le da un valor desde su declaracíon, tal como lo vemos en la imagen A.
+      Inlcuso sin haberle dado un valor específico, el hecho de que se usen las comillas le da a entender a TS que el valor de dicho estado es un string.
+      IMAGEN B: Si quisiéramos ser específicos en cuanto al tipo de nuestro estado, entonces lo declaramos dentro de estas llaves (< >) justo después de la palabra reservada useState.
+      Podemos utilizar un tipado directo, o un interface como lo muestra la imagen B.
+      IMAGEN C: Sin embargo, un estado es actualizable, guarda datos de eventos de usuarios, y de base de datos... y en algunas ocasiones, no sabremos exactamente cuál es el valor inicial de ese estado.
+      Así que si iniciamos un estado en "null" (como es bastante común en React), TS va a arrojarnos un error cuando intentemos actualizar ese estado porque su tipo inferido es null, como lo muestra la imagen C.
+      Eso pasa porque TS no sabe cómo asegurar que un tipo pueda luego mutar a otro, en este caso... type null a type boolean.
+      IMAGEN D: Entonces, podemos especificárselo a useState<> con la barra "or" para indicarle que será uno u el otro como lo muestra la imagen D.
+      IMAGEN E: Finalmente, cuando pasamos state, y setState como props. Los tipos del state los declaramos nosotros como programadores. El tipo de setSate nos lo ofrece React.
+      En la imagen E les compartiré un ejemplo de la manera más óptima de declarar dichos tipos.
+    `,
+    imageUrl: [picA, picB, picC, picD, picE]
   }
 ]
 
