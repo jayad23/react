@@ -1,7 +1,15 @@
 import React from 'react'
 import {Box, Typography, ListSubheader, List} from '@mui/material';
 import ProgramList from './components/program-list/ProgramList';
+const primera_session = "https://material-ui-workshop-git-primerasesion-jayad23.vercel.app/"
 
+const deploymentCollection = [
+  { link: primera_session, label: "primera_session"},
+  { link: "", label: "segunda_session"},
+  { link: "", label: "tercera_session"},
+  { link: "", label: "cuarta_session"},
+  { link: "", label: "project"},
+];
 interface inforationProps {
   id: number;
   label: string;
@@ -38,7 +46,21 @@ function App() {
         aria-labelledby="nested-list-subheader"
         subheader={
           <ListSubheader component="div" id="nested-list-subheader">
-            Para acceder a la información de las sesiones, debes dirigirte a las ramas/(branches):
+            Para acceder a la información de las sesiones, debes dirigirte a las ramas/(branches): <br/>
+            {
+              deploymentCollection.map((br: { link: string; label: string}, idx: number) => (
+                <a
+                  key={idx} 
+                  href={br.link} 
+                  target="_blank"
+                  style={{ borderRight: "1px solid grey", padding: "0px 10px"}}
+                >
+                  {br.label}
+                </a>
+              ))
+            }
+            <br/>
+            Temario:
           </ListSubheader>
         }
       >
