@@ -25,6 +25,12 @@
       ],
       "@api/*": [
         "./src/api/*"
+      ],
+      "@pages/*": [
+        "./src/pages/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
       ]
     },
     "useDefineForClassFields": true,
