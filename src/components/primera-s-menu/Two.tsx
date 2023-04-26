@@ -1,7 +1,7 @@
 import React from 'react'
-import firstPicture from "../../assets/images/1.png";
-import secondPicture from "../../assets/images/2.png";
-import thirdPicture from "../../assets/images/3.png"
+import firstPicture from "@assets/images/1.png";
+import secondPicture from "@assets/images/2.png";
+import thirdPicture from "@assets/images/3.png"
 import { Generic } from './Generic';
 
 interface elementProps {

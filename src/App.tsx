@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import {Box, Button, Divider, Grid, Typography } from '@mui/material';
-import { One } from './components/primera-s-menu/One';
-import { Two } from './components/primera-s-menu/Two';
-import { Third } from './components/primera-s-menu/Third';
-import { Fourth } from './components/primera-s-menu/Fourth';
-import { Fifth } from './components/primera-s-menu/Fifth';
+import { One } from '@components/primera-s-menu/One';
+import { Two } from '@components/primera-s-menu/Two';
+import { Third } from '@components/primera-s-menu/Third';
+import { Fourth } from '@components/primera-s-menu/Fourth';
+import { Fifth } from '@components/primera-s-menu/Fifth';
 
 function App() {
   const [selected, setSelected] = useState("");

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Generic } from './Generic';
-import fifthPicture from "../../assets/images/5.png";
-import eigthPicture from "../../assets/images/8.png";
-import ninePicture from "../../assets/images/9.png";
+import fifthPicture from "@assets/images/5.png";
+import eigthPicture from "@assets/images/8.png";
+import ninePicture from "@assets/images/9.png";
 
 
 const information = [

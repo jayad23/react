@@ -1,15 +1,15 @@
 import React from 'react'
 import { Generic } from './Generic';
-import fourthPicture from "../../assets/images/4.png";
-import tenthPicture from "../../assets/images/10.png";
-import eleventhPicture from "../../assets/images/11.png";
-import thirteenthPicture from "../../assets/images/13.png";
-import forteenthPicture from "../../assets/images/14.png"
-import picA from "../../assets/images/15_a.png";
-import picB from "../../assets/images/15_b.png";
-import picC from "../../assets/images/15_c.png";
-import picD from "../../assets/images/15_d.png";
-import picE from "../../assets/images/15_e.png";
+import fourthPicture from "@assets/images/4.png";
+import tenthPicture from "@assets/images/10.png";
+import eleventhPicture from "@assets/images/11.png";
+import thirteenthPicture from "@assets/images/13.png";
+import forteenthPicture from "@assets/images/14.png"
+import picA from "@assets/images/15_a.png";
+import picB from "@assets/images/15_b.png";
+import picC from "@assets/images/15_c.png";
+import picD from "@assets/images/15_d.png";
+import picE from "@assets/images/15_e.png";
 
 
 const information = [

@@ -1,9 +1,9 @@
 import React from 'react'
 import { Generic } from './Generic';
-import fourthPicture from "../../assets/images/4.png";
-import fifthPicture from "../../assets/images/5.png";
-import sixthPicture from "../../assets/images/6..png";
-import seventhPicture from "../../assets/images/7.png";
+import fourthPicture from "@assets/images/4.png";
+import fifthPicture from "@assets/images/5.png";
+import sixthPicture from "@assets/images/6..png";
+import seventhPicture from "@assets/images/7.png";
 
 const information = [
   { id: 1,
