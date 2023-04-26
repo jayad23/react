@@ -44,12 +44,16 @@ const Login = () => {
         <Button 
           size="small" 
           type="submit" 
-          variant="contained"
+          variant="outlined"
           endIcon={<KeyboardArrowUpIcon/>}
           sx={{
-            background: "rgba( 231, 24, 226, 0.5 )",
+            background: "#fff",
+            color:"#000",
+            border: "1px solid #000",
             ':hover':{
-              background: "rgba( 231, 24, 226, 0.8 )"
+              background: "#000",
+              color: "#fff",
+              border: "1px solid #000",
             }
           }}
           >
