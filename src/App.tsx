@@ -2,13 +2,14 @@ import React from 'react'
 import {Box, Typography, ListSubheader, List} from '@mui/material';
 import ProgramList from '@components/program-list/ProgramList';
 const primera_session = "https://material-ui-workshop-git-primerasesion-jayad23.vercel.app/"
+const project = "https://material-ui-workshop-git-project-jayad23.vercel.app/auth/login";
 
 const deploymentCollection = [
   { link: primera_session, label: "primera_session"},
   { link: "", label: "segunda_session"},
   { link: "", label: "tercera_session"},
   { link: "", label: "cuarta_session"},
-  { link: "", label: "project"},
+  { link: project, label: "project"},
 ];
 interface inforationProps {
   id: number;
