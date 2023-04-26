@@ -1,6 +1,6 @@
 import React from 'react'
 import {Box, Typography, ListSubheader, List} from '@mui/material';
-import ProgramList from './components/program-list/ProgramList';
+import ProgramList from '@components/program-list/ProgramList';
 const primera_session = "https://material-ui-workshop-git-primerasesion-jayad23.vercel.app/"
 
 const deploymentCollection = [
@@ -21,7 +21,6 @@ function App() {
     { id: 1, label: "primera_sesion", topics: ["Instalación de MUi", "Componentes Básicos", "Paso de props a componentes", "Atributos bñasicos"]},
     { id: 2, label: "segunda_sesion", topics: ["Etiquetas contenedoras y estilos default", "Texfield", "Grid System", "Combianos eso creando un Login y una vista Home en la que también vimos:", "Firebase", "React router Layout", "API Calls", "Split coding"]},
   ]
-
   return (
     <Box 
       component="div"
