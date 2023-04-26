@@ -3,6 +3,7 @@ import {Box, Button, Stack, TextField} from '@mui/material'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import {Link} from 'react-router-dom';
 import { onSignIn } from '../../db/firebase';
+import {UserCredential} from 'firebase/auth';
 
 const Login = () => {
   const [ values, setValues ] = useState({ email: "", password: ""});
@@ -16,8 +17,8 @@ const Login = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      const response: any = await onSignIn(values);
-      console.log(response?.user.accessToken);
+      const response: UserCredential = await onSignIn(values);
+      console.log(response.user.refreshToken);
     } catch (error) {
       console.log(error);
     }
