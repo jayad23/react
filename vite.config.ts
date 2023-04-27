@@ -12,7 +12,7 @@ export default defineConfig({
       '@common': path.resolve(__dirname, 'src/components/common'),
       '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@theme': path.resolve(__dirname, 'src/theme'),
-      '@context': path.resolve(__dirname, 'src/context'),
+      '@auth': path.resolve(__dirname, 'src/auth'),
       '@utilities': path.resolve(__dirname, 'src/utilities'),
       '@api': path.resolve(__dirname, 'src/api'),
       '@layout': path.resolve(__dirname, 'src/layout'),

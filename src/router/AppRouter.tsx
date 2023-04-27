@@ -1,9 +1,18 @@
-import React, {Suspense} from 'react'
+import React, {Suspense, lazy } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import Home from '@pages/home/Home'
-import Login from '@pages/login/Login'
-import Register from '@pages/register/Register'
 import AuthLayout from '@components/auth-layout/AuthLayout'
+
+const Login = lazy(() => import ('@pages/login/Login')); 
+const Register = lazy(() => import('@pages/register/Register'));
+const Home = lazy(() => import("@pages/home/Home"));
+
+const menuPages = [
+  {
+    id: 1,
+    path: "/home",
+    Component: Home
+  }
+]
 
 const AppRouter = () => {
   return (
@@ -14,7 +23,11 @@ const AppRouter = () => {
             <Route path="/auth/login" element={<Login />}/>
             <Route path="/auth/register" element={<Register />}/>
           </Route>
-          <Route path="/home" element={<Home />}/>
+          {
+            menuPages.map(({ id, path, Component}: any) => (
+              <Route key={id} path={path} element={<Component />}/>
+            ))
+          }
           <Route path="/" element={<Navigate to="/auth/login" />}/>
         </Routes>
     </BrowserRouter>

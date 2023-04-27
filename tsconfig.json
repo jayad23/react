@@ -11,8 +11,8 @@
       "@utilities/*": [
         "./src/utilities/*"
       ],
-      "@context/*": [
-        "./src/context/*"
+      "@auth/*": [
+        "./src/auth/*"
       ],
       "@theme/*": [
         "./src/theme/*"
