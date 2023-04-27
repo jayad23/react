@@ -29,6 +29,7 @@ const AppRouter = () => {
             ))
           }
           <Route path="/" element={<Navigate to="/auth/login" />}/>
+          <Route path="*" element={<Navigate to="/auth/login" />}/>
         </Routes>
     </BrowserRouter>
     </Suspense>
