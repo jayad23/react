@@ -1,4 +1,12 @@
 import React from 'react'
-import {Typography} from '@mui/material'
+import { Generic } from './Generic';
+import { secondaryInfo } from '@assets/info';
 
-export const One = () => <Typography variant="h6" component="div">Para toda la información teórica, accede al PPTX que se usó en clase accediendo al link: <a href="https://1drv.ms/p/s!AmkmA2B9HL9O6QgoVIwq5ay90orF?e=RSZLJL" target='_blank'>Aquí</a></Typography>
+export const One = () => {
+  return (
+    <Generic 
+      subHeader='Tipos de contenedores en Material Ui'
+      information={secondaryInfo.one}
+    />
+  )
+}

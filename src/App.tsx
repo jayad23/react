@@ -5,6 +5,7 @@ import { Two } from '@components/primera-s-menu/Two';
 import { Third } from '@components/primera-s-menu/Third';
 import { Fourth } from '@components/primera-s-menu/Fourth';
 import { Fifth } from '@components/primera-s-menu/Fifth';
+import { mainInfo, maininfoitem } from '@assets/info';
 
 function App() {
   const [selected, setSelected] = useState("");
@@ -13,18 +14,18 @@ function App() {
   return (
     <Box component="div" p={2} width="100%" >
       <Typography variant="h4" component="div" mb={2}>
-        Branch: primera_sesion
+        Branch: segunda_sesion
       </Typography>
-      <Grid container mb={2} spacing={1} sx={{ justifyContent: { lg: "center" }}}>
+      <Grid container mb={2} spacing={1} sx={{ justifyContent: { lg: "space-evenly" }}}>
         {
-          [{ title: "¿Qué es Material Ui?", label: "first"}, { title: "Instalación", label: "second"}, { title: "Simple & Complex components", label: "third"}, { title: "Atributos y props", label: "fourth"}, { title: "Tips básicos de TS", label: "fifth"}].map((menu: { title: string; label: string}) => (
-            <Grid key={menu.label} xs={12} sm={6} md={4} lg={2.3} item>
+          mainInfo.map((menu: maininfoitem) => (
+            <Grid key={menu.label} xs={12} sm={6} md={4} lg={3} item>
               <Button 
                 fullWidth 
                 variant="contained" 
                 size="small"
                 color={selected === menu.label ? "secondary" : "primary" } 
-                sx={{ height: "50px"}}
+                //sx={{ height: "50px"}}
                 onClick={() => handleSelected(menu.label)}
                 >
                   {menu.title}
