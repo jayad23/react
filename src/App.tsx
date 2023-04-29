@@ -1,13 +1,15 @@
 import React from 'react'
 import {Box, Typography, ListSubheader, List} from '@mui/material';
 import ProgramList from '@components/program-list/ProgramList';
-const primera_session = "https://material-ui-workshop-git-primerasesion-jayad23.vercel.app/"
+const primera_session = "https://material-ui-workshop-git-primerasesion-jayad23.vercel.app/";
+const segunda_sesion = "https://material-ui-workshop-git-segundasesion-jayad23.vercel.app/";
+const tercera_session = "https://material-ui-workshop-git-tercerasesion-jayad23.vercel.app/";
 const project = "https://material-ui-workshop-git-project-jayad23.vercel.app/auth/login";
 
 const deploymentCollection = [
   { link: primera_session, label: "primera_session"},
-  { link: "", label: "segunda_session"},
-  { link: "", label: "tercera_session"},
+  { link: segunda_sesion, label: "segunda_session"},
+  { link: tercera_session, label: "tercera_session"},
   { link: "", label: "cuarta_session"},
   { link: project, label: "project"},
 ];
