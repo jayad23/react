@@ -40,7 +40,7 @@ const handleActionReducer = (state: State, { type, payload }: Actions) => {
 
 const AuthContextProvider = ({ children }: { children: ReactNode }) => {
   const initialState = {
-    isAuth: false,
+    isAuth: !!sessionStorage.getItem("token"),
     user: null
   };
 

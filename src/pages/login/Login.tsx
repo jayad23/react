@@ -1,15 +1,21 @@
 import React, { ChangeEvent, FormEvent, useState, useContext } from 'react'
-import {Box, Button, Stack, TextField} from '@mui/material'
+import {Box, Button, Stack, TextField, Typography} from '@mui/material'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import {Link} from 'react-router-dom';
 import { onSignIn } from '../../db/firebase';
 import {UserCredential} from 'firebase/auth';
 import {AuthContext} from '@auth/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { loginErrorHandler } from './errorhandler';
+
+interface LoadingState {
+  status: 'Ingresar' | 'Loading...';
+  error: null | string;
+};
 
 const Login = () => {
   const [ values, setValues ] = useState({ email: "", password: ""});
-  const [ loading, setLoading ] = useState("Ingresar");
+  const [ loading, setLoading ] = useState<LoadingState>({ status: "Ingresar", error: null });
   const { dispatch } = useContext(AuthContext)
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
@@ -20,20 +26,20 @@ const Login = () => {
   const navigate = useNavigate();
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading("Loading...")
+    setLoading({ status: "Loading...", error: null });
     try {
       const response: UserCredential = await onSignIn(values);
       dispatch({ type: "LOGIN", payload: { email: response.user.email as string, token: response.user.refreshToken }});
       navigate("/home");
-      setLoading("Ingresar");
-    } catch (error) {
+      setLoading({ status: "Ingresar", error: null });
+    } catch (error: any) {
       console.log(error);
-      setLoading("Volver a intentar");
+      setLoading({ status: "Ingresar", error: loginErrorHandler(error.message as string) });
     }
   };
 
   return (
-    <Stack component="form" spacing={2} onSubmit={(e) => handleSubmit(e)}>
+    <Stack component="form" spacing={1} onSubmit={(e) => handleSubmit(e)}>
       <TextField 
         size="small" 
         label="email"
@@ -63,12 +69,17 @@ const Login = () => {
               background: "#000",
               color: "#fff",
               border: "1px solid #000",
-            }
+            },
           }}
           >
-            {loading}
+            {loading.status}
           </Button>
       </Box>
+      {loading.error && (
+        <Box component="div" sx={{ textAlign: "left"}}>
+          <Typography variant="caption" component="p" color="error">{loading.error}</Typography>
+        </Box>
+      )}
     </Stack>
   )
 }
