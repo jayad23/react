@@ -3,7 +3,7 @@ import {Box, Button, Divider, Grid, Typography } from '@mui/material';
 import { One } from '@components/primera-s-menu/One';
 import { Two } from '@components/primera-s-menu/Two';
 import { Third } from '@components/primera-s-menu/Third';
-import { Fourth } from '@components/primera-s-menu/Fourth';
+//import { Fourth } from '@components/primera-s-menu/Fourth';
 import { Fifth } from '@components/primera-s-menu/Fifth';
 import { mainInfo, maininfoitem } from '@assets/info';
 
@@ -51,6 +51,6 @@ const componentObject = {
   first: <One/>,
   second: <Two />,
   third: <Third/>,
-  fourth: <Fourth />,
+  //fourth: <Fourth />,
   fifth: <Fifth/>
 }
