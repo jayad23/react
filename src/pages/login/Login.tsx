@@ -27,14 +27,18 @@ const Login = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading({ status: "Loading...", error: null });
-    try {
-      const response: UserCredential = await onSignIn(values);
-      dispatch({ type: "LOGIN", payload: { email: response.user.email as string, token: response.user.refreshToken }});
-      navigate("/home");
-      setLoading({ status: "Ingresar", error: null });
-    } catch (error: any) {
-      console.log(error);
-      setLoading({ status: "Ingresar", error: loginErrorHandler(error.message as string) });
+    if(values.email.length > 0 && values.password.length > 0){
+      try {
+        const response: UserCredential = await onSignIn(values);
+        dispatch({ type: "LOGIN", payload: { email: response.user.email as string, token: response.user.refreshToken }});
+        navigate("/home");
+        setLoading({ status: "Ingresar", error: null });
+      } catch (error: any) {
+        console.log(error);
+        setLoading({ status: "Ingresar", error: loginErrorHandler(error.message as string) });
+      }
+    }else {
+      setLoading({ status: "Ingresar", error: "Debes ingresar un email y una contraseña" });
     }
   };
 
@@ -64,11 +68,12 @@ const Login = () => {
           sx={{
             background: "#fff",
             color:"#000",
-            border: "1px solid #000",
+            border: "2px solid #000",
+            fontWeight: "bolder",
             ':hover':{
               background: "#000",
               color: "#fff",
-              border: "1px solid #000",
+              border: "2px solid #000",
             },
           }}
           >
