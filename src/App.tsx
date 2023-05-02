@@ -14,7 +14,7 @@ function App() {
   return (
     <Box component="div" p={2} width="100%" >
       <Typography variant="h4" component="div" mb={2}>
-        Branch: segunda_sesion
+        Branch: tercera_sesion
       </Typography>
       <Grid container mb={2} spacing={1} sx={{ justifyContent: { lg: "space-evenly" }}}>
         {

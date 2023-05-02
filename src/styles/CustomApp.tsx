@@ -2,7 +2,7 @@ import React from 'react'
 import {Box, Typography} from '@mui/material'
 import GridSystem from './types-of-styles/grid-system/GridSystem'
 
-const App = () => {
+const CustomApp = () => {
   return (
     <Box component="main" textAlign="center">
       <Typography 
@@ -17,4 +17,4 @@ const App = () => {
   )
 }
 
-export default App
+export default CustomApp

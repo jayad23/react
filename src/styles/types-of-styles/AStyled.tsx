@@ -6,7 +6,6 @@ const CustomBox = styled(Box)`
   width: 200px;
   height: 200px;
   border: 10px solid purple;
-
 `;
 
 const StyledBox = styled(Box)(({ theme }) => ({
